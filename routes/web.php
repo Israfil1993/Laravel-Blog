@@ -15,26 +15,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
 
 Route::get('/home', function (){
     return view('index');
-});
+})->name('home');
 Route::get('/post', function (){
     return view('frontend.pages.post');
-});
+})->name('post');
 Route::get('/contact', function (){
     return view('frontend.pages.contact');
-});
+})->name('contact');
 
 Route::get('/about', function (){
     return view('frontend.pages.about');
-});
+})->name('about');
